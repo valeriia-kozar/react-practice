@@ -1,25 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './styles/App.css';
-import {BrowserRouter, Router}
+import {BrowserRouter, Route} from 'react-router-dom-v5-compat';
+import About from './pages/About';
+import Posts from './pages/Posts';
 
 
 function App() {
   return (
-    <div className="App">
-      <MyButton style={{marginTop: 30}} onClick={() => setModal(true)}>
-        Create user
-      </MyButton>
-      <MyModal visible={modal} setVisible={setModal}>
-        <PostForm create={createPost} />
-      </MyModal>
-      <PostFilter
-      filter={filter}
-      setFilter={setFilter}
-      />
-      <PostList remove={removePost} posts={sortedAndSearchedPosts} title="List of posts"/>
-    </div>
-  );
-
+    <BrowserRouter>
+        <Route path='/about'>
+          <About/>
+        </Route>
+        <Route path='/posts'>
+          <Posts/>
+        </Route>
+    </BrowserRouter>
+  )
 }
 
 export default App;
