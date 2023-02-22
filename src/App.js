@@ -1,21 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-
-import About from './pages/About';
-import Posts from './pages/Posts';
-
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 import './styles/App.css';
+import Navbar from './components/UI/Navbar/Navbar';
+import AppRouter from './components/AppRouter';
 
 function App() {
   return (
     <BrowserRouter>
-      <Route path='/about'>
-        <About/>
-      </Route>
-      <Redirect from='/app' to='/about' />
-      <Route path='/posts'>
-        <Posts/>
-      </Route>
+      <Navbar/>
+      <AppRouter/>
     </BrowserRouter>
   )
 }
