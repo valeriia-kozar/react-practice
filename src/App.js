@@ -12,6 +12,7 @@ function App() {
       <Route path='/about'>
         <About/>
       </Route>
+      <Redirect from='/app' to='/about' />
       <Route path='/posts'>
         <Posts/>
       </Route>
